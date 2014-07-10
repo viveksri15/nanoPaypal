@@ -1,0 +1,35 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.com.nanoPaypal.ui.MainPage.index()
+GET     /Register                   controllers.com.nanoPaypal.ui.UserController.register()
+POST    /RegisterDone               controllers.com.nanoPaypal.ui.UserController.registerDone()
+GET     /RegisterDone               controllers.com.nanoPaypal.ui.UserController.register()
+POST    /Login                     	controllers.com.nanoPaypal.ui.UserController.login()
+GET     /Login                      controllers.com.nanoPaypal.ui.MainPage.index()
+GET     /Logout                     controllers.com.nanoPaypal.ui.UserController.logout()
+GET     /ForgotPassword             controllers.com.nanoPaypal.ui.User.forgotPassword()
+POST    /ForgotPassword             controllers.com.nanoPaypal.ui.User.forgotPassword_exec()
+
+GET     /user                       controllers.com.nanoPaypal.ui.User.index()
+GET     /admin                      controllers.com.nanoPaypal.ui.Admin.index()
+GET     /admin/History              controllers.com.nanoPaypal.ui.Admin.getHistory()
+POST     /admin/History           controllers.com.nanoPaypal.ui.Admin.getHistoryOfUser()
+
+GET     /History                    controllers.com.nanoPaypal.ui.User.getHistory()
+GET     /user/changePassword        controllers.com.nanoPaypal.ui.User.changePassword()
+POST    /user/changePassword        controllers.com.nanoPaypal.ui.User.changePassword_exec()
+
+GET     /transact                   controllers.com.nanoPaypal.ui.Transact.index()
+GET     /transact/add               controllers.com.nanoPaypal.ui.Transact.addUser()
+POST    /transact/add               controllers.com.nanoPaypal.ui.Transact.insertUser()
+GET     /transact/delete            controllers.com.nanoPaypal.ui.Transact.deleteUsers()
+POST     /transact/delete           controllers.com.nanoPaypal.ui.Transact.deleteUsers_exec()
+
+GET     /transact/sendMoney            controllers.com.nanoPaypal.ui.Transact.sendMoney()
+POST     /transact/sendMoney            controllers.com.nanoPaypal.ui.Transact.sendMoney_exec()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

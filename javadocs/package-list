@@ -1,0 +1,11 @@
+com.nanoPaypal.UIApi.helpers
+com.nanoPaypal.configurationManager
+com.nanoPaypal.db
+com.nanoPaypal.db.impl.sqlLite
+com.nanoPaypal.db.specs
+com.nanoPaypal.logging
+com.nanoPaypal.transaction.impl
+com.nanoPaypal.transaction.spec
+com.nanoPaypal.user.impl
+com.nanoPaypal.user.impl.exceptions
+com.nanoPaypal.user.specs

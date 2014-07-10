@@ -1,0 +1,22 @@
+<table>
+	<tr>
+		<td style="text-align: right"><a href="/user">Home</a></td>
+	</tr>
+	<tr>
+		<td style="text-align: right"><a href="/user/changePassword">Change Password</a></td>
+	</tr>
+	<tr>
+		<td style="text-align: right"><a href="/Logout">Sign out</a></td>
+	</tr>
+	@if(session.get("admin") != null && session.get("admin").equals("true")){
+		<tr>
+			<td style="text-align: right"><a href="/admin">Admin</a></td>
+		</tr>
+	}
+	<tr>
+		<td style="text-align: right"><a href="/transact">Send Money</a></td>
+	</tr>
+	<tr>
+		<td style="text-align: right"><a href="/History">See History</a></td>
+	</tr>
+</table>

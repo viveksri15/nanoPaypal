@@ -1,0 +1,97 @@
+@(message: String)
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Welcome</title>
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+<script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
+<script src="@routes.Assets.at("javascripts/jquery-2.1.1.min.js")" type="text/javascript"></script>
+<script src="@routes.Assets.at("javascripts/jquery-ui.min.js")" type="text/javascript"></script>
+<script src="@routes.Assets.at("javascripts/jquery.validate.js")" type="text/javascript"></script>
+
+<script>
+
+	$().ready(function() {
+		$("#registrationForm").validate({
+				rules: {
+					userName: "required",
+					password: "required",
+					email: {
+						required: true,
+						email: true
+					},
+					password1: {
+						required: true,
+						equalTo: "#password"
+					}
+				},
+				messages: {
+					userName: "username cannot be blank",
+					password: "password cannot be blank",
+					password1: "Both the passwords should match",
+					email: "Please provide a valid emailId"
+				}		
+		});
+	});
+</script>
+
+</head>
+	<body>
+		<div style="width: 100%; text-align: center;">
+			<h1>Welcome to NanoPaypal</h1>
+			<h2>Register</h2>
+			<br/><br/>
+			<label name="error">@message</label>
+		</div>
+		<div>
+			Login
+			<form action="/RegisterDone" method="post" id="registrationForm">
+				<table>
+					<tr>
+						<td>
+							UserName
+						</td>
+						<td>
+							<input type="text" name="userName" required />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							email
+						</td>
+						<td>
+							<input type="text" name="email" required/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Password
+						</td>
+						<td>
+							<input id="password" type="password" name="password" required/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Retype Password
+						</td>
+						<td>
+							<input type="password" name="password1" required/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="/">Sign in</a>
+						</td>
+						<td>
+							<input type="submit" value="Register"/>
+						</td>
+					</tr>
+				</table> 
+			</form>
+		</div>
+	</body>
+</html>
